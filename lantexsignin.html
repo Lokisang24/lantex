@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-bs-theme="dark">
   <head>
     <title>signin to Lantex technologies</title>
+    <meta charset="utf-8" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script src="bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="lantexlogin.css" />
   </head>
   <body>
@@ -13,13 +17,29 @@
 
     <div class="login_body">
       <h3>sign-in</h3>
-      <form action="" method="">
-        <input type="text" placeholder="enter your username..." />
-        <input type="email" placeholder="enter your email..." />
-        <input type="number" placeholder="enter your phone numbers..." />
-        <input type="password" placeholder="enter your password..." />
-        <a href="#">Suggest a strong passoword ?</a>
-        <button type="submit">sign-in</button>
+      <form action="" method="" data-bs-theme="dark">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="enter your username..."
+        />
+        <input
+          class="form-control"
+          type="email"
+          placeholder="enter your email..."
+        />
+        <input
+          class="form-control"
+          type="number"
+          placeholder="enter your phone numbers..."
+        />
+        <input
+          class="form-control"
+          type="password"
+          placeholder="enter your password..."
+        />
+        <a href="#">forgot password ?</a>
+        <button class="btn btn-outline-primary" type="submit">sign-in</button>
 
         <abbr
           >Already have an account ? <a href="loginpage.html">Log in.</a></abbr

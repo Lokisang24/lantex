@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <title>Lantex Home Page</title>
 
@@ -12,29 +12,82 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script src="bootstrap.bundle.min.js"></script>
     <script src="lantexhome.js"></script>
   </head>
-  <body>
-    <header>
-      <h1>Lantex</h1>
-      <abbr>transforming the tech world through innovation</abbr>
-      <button type="button" class="menu_button"><i class="fas fa-bars"></i></button>
+  <body class="">
+    <!-- the menu -->
+    <nav class="navbar bg-dark w-100 p-3 fixed-top">
+      <div class="container-fluid">
+        <div id="head_container" class="mx-auto">
+          <a id="heading" class="navbar-brand fw-bold fs-1" href="#">LANTEX</a>
+          <small class="fs-5">Transcending the world through tech</small>
+        </div>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <ul class="menu_options">
-        <li>
-          <a href="#"><i class="fas fa-house"></i> Home</i></a>
-        </li>
-        <li><a href="#"><i class="fas fa-wrench"></i>   Services</a></li>
-        <li><a href="#"><i class="fa-brands fa-product-hunt"></i>    Products</a></li>
-        <li><a href="#"><i class="fas fa-lightbulb"></i>     Innovations</a></li>
-        <li><a href="#"><i class="fas fa-info-circle"></i>    About</a></li>
-      </ul>
-    </header>
+        <div class="offcanvas offcanvas-end w-50" id="menu">
+          <div class="offcanvas-header">
+            <h3 class="offcanvas-title">Menu</h3>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+          </div>
+
+          <div
+            id="offcanvas_container_body"
+            class="offcanvas-body bg-secondary"
+          >
+            <ul class="navbar-nav d-flex justify-content-end pe-3">
+              <li class="nav-item fw-light fs-4">
+                <a id="home_option" href="#" class="nav-link"
+                  ><i class="fa fa-home"></i>Home</a
+                >
+              </li>
+              <li class="nav-item"><hr class="dropdown-divider" /></li>
+              <li class="nav-item fw-light fs-4">
+                <a id="service_option" href="#" class="nav-link"
+                  ><i class="fa fa-wrench"></i>Services</a
+                >
+              </li>
+              <li class="nav-item fw-light fs-4">
+                <a id="updates_option" href="#" class="nav-link"
+                  ><i class="fas fa-refresh"></i>Updates</a
+                >
+              </li>
+              <li class="nav-item fw-light fs-4">
+                <a id="about_option" href="#" class="nav-link"
+                  ><i class="fa fa-info"></i>About</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <main>
-      <section class="Home" id="Home">
-        <div class="head_section">
-          <h1>Trends And Updates</h1>
+      <section class="Home" id="home_section">
+        <div class="head_section bg-secondary">
+          <h1>LANTEX Home</h1>
+        </div>
+        <div class="home_section">
+          <h2>Lantex</h2>
+
+          <article>
+            LANTEX is a tech company created in the year 2024, in a small town
+            in Gauteng province. Initially it came as an idea that was
+            influenced by Tony Stark's JARVIS. The creator of Lantex wanted to
+            create his own JARVIS, and he ended up concieving multiple
+            innovative ideas that could be brought to life by and through
+            technology.
+          </article>
         </div>
         <div class="home_section">
           <h2>Trends</h2>
@@ -54,22 +107,10 @@
             nobis libero consequatur itaque architecto qui provident.
           </p>
         </div>
-        <div class="home_section">
-          <h2>Lantex</h2>
-
-          <article>
-            LANTEX is a tech company created in the year 2024, in a small town
-            in Gauteng province. Initially it came as an idea that was
-            influenced by Tony Stark's JARVIS. The creator of Lantex wanted to
-            create his own JARVIS, and he ended up concieving multiple
-            innovative ideas that could be brought to life by and through
-            technology.
-          </article>
-        </div>
       </section>
 
-      <section class="Services" id="Services">
-        <div class="head_section">
+      <section class="Services" id="services_section">
+        <div class="head_section bg-secondary" data-bs-theme="light">
           <h2>Services</h2>
         </div>
         <div class="service_container">
@@ -83,15 +124,37 @@
                   ullam voluptatum alias cumque, commodi sapiente tenetur
                   voluptas molestias minima, nisi quod reprehenderit.
                 </p>
-                <div class="container_ai">
-                  <h3>AI Services</h3>
+                <div class="dropdown dropdown-end" data-bs-theme="dark">
+                  <button
+                    class="btn btn-outline-primary dropdown-toggler"
+                    data-bs-auto-close="inside"
+                    data-bs-toggle="dropdown"
+                  >
+                    AI Services
+                  </button>
 
-                  <ul>
-                    <li><a href="#">LLMs Development</a></li>
-                    <li><a href="#">Neuromorphic AI Research</a></li>
-                    <li><a href="#">AI Agents</a></li>
-                    <li><a href="#">Robotics pre-tarined AI Models</a></li>
-                    <li><a href="#">Lantex-AI Model</a></li>
+                  <ul class="dropdown-menu text-body-secondary">
+                    <li>
+                      <a class="dropdown-item" href="#">LLMs Development</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Neuromorphic AI Research</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">AI Agents</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Robotics pre-tarined AI Models</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Lantex-AI Model</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -105,15 +168,42 @@
                   ullam voluptatum alias cumque, commodi sapiente tenetur
                   voluptas molestias minima, nisi quod reprehenderit.
                 </p>
-                <div class="container_software">
-                  <h3>Software Services</h3>
 
-                  <ul>
-                    <li><a href="#">Software Application Development</a></li>
-                    <li><a href="#">Game Development</a></li>
-                    <li><a href="#">Operating System Development</a></li>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Lantex Search Engine</a></li>
+                <div class="dropdown dropdown-end" data-bs-theme="dark">
+                  <button
+                    class="btn btn-outline-primary dropdown-toggler"
+                    data-bs-auto-close="inside"
+                    data-bs-toggle="dropdown"
+                  >
+                    Software Services
+                  </button>
+
+                  <ul class="dropdown-menu text-body-secondary">
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Software Application Development</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item dropdown-item-primary" href="#"
+                        >Game Development</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Operating System Development</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Web Development</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Lantex Search Engine</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -127,18 +217,50 @@
                   ullam voluptatum alias cumque, commodi sapiente tenetur
                   voluptas molestias minima, nisi quod reprehenderit.
                 </p>
-                <div class="container_cybersecurity">
-                  <h3>Software Services</h3>
 
-                  <ul>
-                    <li><a href="#">Penetration Testing</a></li>
-                    <li><a href="#">Vulnerability Patching</a></li>
-                    <li><a href="#">Operating System Security</a></li>
+                <div class="dropdown dropdown-end" data-bs-theme="dark">
+                  <button
+                    class="btn btn-outline-primary dropdown-toggler"
+                    data-bs-auto-close="inside"
+                    data-bs-toggle="dropdown"
+                  >
+                    CyberSecurity Services
+                  </button>
+
+                  <ul class="dropdown-menu text-body-secondary">
                     <li>
-                      <a href="#">Hacking and Security Defence Services</a>
+                      <a class="dropdown-item" href="#">Penetration Testing</a>
                     </li>
-                    <li><a href="#">Website Safety And Protection</a></li>
-                    <li><a href="#">Computer Network Security</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item dropdown-item-primary" href="#"
+                        >Vulnerability Patching</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Operating System Security</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Hacking and Security Defence Services</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Website Safety And Protection</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Computer Network Security</a
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -152,16 +274,48 @@
                   ullam voluptatum alias cumque, commodi sapiente tenetur
                   voluptas molestias minima, nisi quod reprehenderit.
                 </p>
-                <div class="container_cybersecurity">
-                  <h3>Robotics Services</h3>
 
-                  <ul>
-                    <li><a href="#">Robotic AI_Powered Drones</a></li>
-                    <li><a href="#">AI-Powered Gadgets</a></li>
-                    <li><a href="#">AI_Powered conversing Robotics Arms</a></li>
-                    <li><a href="#">AI-Integrated Robotics Circuit</a></li>
-                    <li><a href="#">Visual Robotics Components</a></li>
-                    <li><a href="#">Robotics Research</a></li>
+                <div class="dropdown dropdown-end" data-bs-theme="dark">
+                  <button
+                    class="btn btn-outline-primary dropdown-toggler"
+                    data-bs-auto-close="inside"
+                    data-bs-toggle="dropdown"
+                  >
+                    Robotics Services
+                  </button>
+
+                  <ul class="dropdown-menu text-body-secondary">
+                    <li>
+                      <a class="dropdown-item" href="#">Robotics Research</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Visual Robotics Components</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >AI-Integrated Robotics Circuits</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >RAI_Powered conversing Robotics Arms</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">AI-Powered Gadgets</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Robotic AI_Powered Drones</a
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -175,15 +329,42 @@
                   ullam voluptatum alias cumque, commodi sapiente tenetur
                   voluptas molestias minima, nisi quod reprehenderit.
                 </p>
-                <div class="container_ai">
-                  <h3>IoT and Networking Services</h3>
 
-                  <ul>
-                    <li><a href="#">Local Area Network Deployment</a></li>
-                    <li><a href="#">Home Devices IoT Integration</a></li>
-                    <li><a href="#">CCTV surveilance and functionality</a></li>
-                    <li><a href="#">Sensor functionality</a></li>
-                    <li><a href="#">IoT Applications</a></li>
+                <div class="dropdown dropdown-end" data-bs-theme="dark">
+                  <button
+                    class="btn btn-outline-primary dropdown-toggler"
+                    data-bs-auto-close="inside"
+                    data-bs-toggle="dropdown"
+                  >
+                    IoT and Networking Services
+                  </button>
+
+                  <ul class="dropdown-menu text-body-secondary">
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Local Area Network Deployment</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Home Devices IoT Integration</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >CCTV surveilance and functionality</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Sensor functionality</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">IoT Applications</a>
+                    </li>
                   </ul>
                 </div>
               </div>

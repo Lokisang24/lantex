@@ -1,18 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //   window.alert("loaded");
-  const menu_options = document.querySelector(".menu_options");
-  const menu_button = document.querySelector(".menu_button");
+  // sections
+  const homeSection = document.querySelector("#home_section");
+  const serviceSection = document.querySelector(".Services");
 
-  menu_button.addEventListener("click", () => {
+  // menu options
+  const homeOption = document.querySelector("#home_option");
+  const serviceOption = document.querySelector("#service_option");
+  const updatesOption = document.querySelector("#updates_option");
+  const aboutOption = document.querySelector("#about_option");
+
+  // trigger the home section when the home option is selected...
+  homeOption.addEventListener("click", () => {
     if (
-      menu_options.style.display == "none" ||
-      menu_options.style.display == ""
+      homeSection.style.display == "" ||
+      homeSection.style.display == null ||
+      homeSection.style.display == undefined
     ) {
-      menu_options.style.display = "flex";
-    } else if (menu_options.style.display == "flex") {
-      menu_options.style.display = "none";
+      homeSection.style.display = "flex";
+      serviceSection.style.display = "";
+    } else if (homeSection.style.display == "flex") {
+      homeSection.style.display = "";
+      serviceSection.style.display = "flex";
     }
   });
 
-  //trigger the menu options when the menu button is clicked...
+  serviceOption.addEventListener("click", () => {
+    console.log(serviceSection.style.display);
+    if (
+      serviceSection.style.display == "" ||
+      serviceSection.style.display == null ||
+      serviceSection.style.display == undefined
+    ) {
+      serviceSection.style.display = "flex";
+      homeSection.style.display = "";
+    } else if (serviceSection.style.display == "flex") {
+      serviceSection.style.display == "";
+      homeSection.style.display = "flex";
+    }
+  });
 });
